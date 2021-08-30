@@ -32,6 +32,5 @@ This is a reading list related to Causality in Natural Language Processing.
 ### language model
 
 1. Tongshuang Wu, Marco Tulio Ribeiro, Jeffrey Heer, and Daniel S. Weld. 2021. [Polyjuice: Generating Counterfactuals for Explaining, Evaluating](https://arxiv.org/pdf/2101.00288.pdf), and Improving Models. *arXiv:2101.00288 [cs]*. [code](https://github.com/tongshuangwu/polyjuice)
-
-
+2. Nishtha Madaan, Inkit Padhi, Naveen Panwar, and Diptikalyan Saha. 2021. [Generate Your Counterfactuals: Towards Controlled Counterfactual Generation for Text](https://ojs.aaai.org/index.php/AAAI/article/view/17594). In *Proceedings of the AAAI Conference on Artificial Intelligence*, **volume\* *35**, pages 13516–13524. [code](https://github.com/annon-author9/GYC)
 
