@@ -1,6 +1,6 @@
 # Causality-NLP-Reading-List
 
-This is a reading list related to Causality in Natural Language Processing. 
+This is a reading list related to the work that introduces how causal inference helps NLP for stable learning.
 
 ## Backdoor Adjustment
 
