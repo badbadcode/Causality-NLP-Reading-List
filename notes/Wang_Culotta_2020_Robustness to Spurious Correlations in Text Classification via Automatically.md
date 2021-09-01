@@ -47,9 +47,9 @@
    
    
 
-![image-20210819161935323](C:\Users\Mingyue\AppData\Roaming\Typora\typora-user-images\image-20210819161935323.png)
+![image-20210819161935323](img\image-20210819161935323.png)
 
-![image-20210819161840945](C:\Users\Mingyue\AppData\Roaming\Typora\typora-user-images\image-20210819161840945.png)
+![image-20210819161840945](img\image-20210819161840945.png)
 
 
 
