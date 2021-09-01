@@ -47,7 +47,7 @@ There are many reasons why $P_{train}(Y |Z)$​ may not equal  $P_{train}(Y |Z)$
 方法bone来自作者上一篇工作 (Landeiro and Culotta, 2016) 
 
 $$
-L(D, \theta)=\sum_{i \in D} \log p_{\theta}\left(y_{i} \mid \mathbf{x}_{i}, z_{i}\right)-\lambda_{x} \sum_{k}\left(\theta_{k}^{x}\right)^{2}-\lambda_{z} \sum_{k}\left(\theta_{k}^{z}\right)^{2}
+L(D, \theta)=\sum_{i \in D} \log p_ {\theta}\left(y_ {i} \mid \mathbf{x}_ {i}, z_ {i}\right)-\lambda_ {x} \sum_{k}\left(\theta_ {k}^{x}\right)^{2}-\lambda_ {z} \sum_ {k}\left(\theta_ {k}^{z}\right)^{2}
 $$
 
 
