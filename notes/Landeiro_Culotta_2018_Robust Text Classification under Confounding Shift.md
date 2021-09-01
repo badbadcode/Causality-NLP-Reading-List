@@ -46,11 +46,9 @@ There are many reasons why $P_{train}(Y |Z)$​ may not equal  $P_{train}(Y |Z)$
 
 方法bone来自作者上一篇工作 (Landeiro and Culotta, 2016)
 
-$
 
-L(D, \theta)=\sum_{i \in D} \log p_{\theta}\left(y_{i} \mid \mathbf{x}_{i}, z_{i}\right)-\lambda_{x} \sum_{k}\left(\theta_{k}^{x}\right)^{2}-\lambda_{z} \sum_{k}\left(\theta_{k}^{z}\right)^{2}
+$L(D, \theta)=\sum_{i \in D} \log p_{\theta}\left(y_{i} \mid \mathbf{x}_{i}, z_{i}\right)-\lambda_{x} \sum_{k}\left(\theta_{k}^{x}\right)^{2}-\lambda_{z} \sum_{k}\left(\theta_{k}^{z}\right)^{2}$
 
-$
 
 > 在训练的时候，学习怎么预测条件概率，通过惩罚项，以及增大混杂的变量值，增加模型对于混杂的注意（只有两个特征，而X有很多特征），采样控制confound shift的强度，并满足以下条件。
 
