@@ -2,6 +2,10 @@
 
 This is a reading list related to the work that introduces how causal inference helps NLP for stable learning.
 
+## Review
+1. Amir Feder, Katherine A. Keith, Emaad Manzoor, Reid Pryzant, Dhanya Sridhar, Zach Wood-Doughty, Jacob Eisenstein, Justin Grimmer, Roi Reichart, Margaret E. Roberts, Brandon M. Stewart, Victor Veitch, and Diyi Yang. 2021. [Causal Inference in Natural Language Processing: Estimation, Prediction, Interpretation and Beyond](http://arxiv.org/abs/2109.00725). arXiv: 2109.00725. [[中文阅读笔记]](https://github.com/badbadcode/Causality-NLP-Reading-List/blob/master/notes/Feder%20et%20al_2021_Causal%20Inference%20in%20Natural%20Language%20Processing%20-%20Estimation%2C%20Prediction%2C%20Beyond.md)
+
+
 ## Backdoor Adjustment
 
 1. Shengyu Zhang, Tan Jiang, Tan Wang, Kun Kuang, Zhou Zhao, Jianke Zhu, Jin Yu, Hongxia Yang, and Fei Wu. 2021. [DeVLBert: Out-of-Distribution Visio-Linguistic Pretraining With Causality](https://openaccess.thecvf.com/content/CVPR2021W/CiV/html/Zhang_DeVLBert_Out-of-Distribution_Visio-Linguistic_Pretraining_With_Causality_CVPRW_2021_paper.html). pages 1744–1747. [[code]](https://github.com/shengyuzhang/DeVLBert)
