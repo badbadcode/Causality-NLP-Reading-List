@@ -8,7 +8,7 @@ $$
 P_{tr}(X,Y) \ne P_{te}(X,Y)
 $$
 
-<img src="https://gitee.com/hanmingyue/picgo/raw/master/pic/image-20211201202032545.png" alt="image-20211201202032545" style="zoom: 80%;" />
+<img src="https://gitee.com/hanmingyue/picgo/raw/master/pic/image-20211201202032545.png" alt="image-20211201202032545" style="zoom: 80%;" align=center/>
 
 i.e.
 $$
@@ -86,7 +86,7 @@ identifying causal effect of **a** variable:
 
 转换成：
 
-<img src="https://gitee.com/hanmingyue/picgo/raw/master/pic/image-20211128231258530.png" alt="image-20211128231258530" style="zoom:80%;" />
+<img src="https://gitee.com/hanmingyue/picgo/raw/master/pic/image-20211128231258530.png" alt="image-20211128231258530" style="zoom:80%;float:center" />
 
 很难有解析解，我们使用迭代的方式求解，参考DCB（KDD2017）的算法，使用proximal gradient algorithm依次对两个参数求解。
 
