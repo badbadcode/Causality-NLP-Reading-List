@@ -18,18 +18,18 @@ $$
 包括以下几种可能：
 
 1.  $$ P_{tr}(Y|X)= P_{te}(Y|X), P_{tr}(X) \ne P_{te}(X)$$​​​
+   
+      [covariate shift problem](https://blog.csdn.net/gzmfxy/article/details/78905042)，这种OOD情况比较普遍，仅仅是X 的分布有变化，条件概率分布不变，[Shen et al., 2021](http://arxiv.org/abs/2108.13624) 在综述中这么定义。The marginal distribution of $X$​​​ shifts from training phase to test phase while the label generation mechanism keeps unchanged.
 
-   [covariate shift problem](https://blog.csdn.net/gzmfxy/article/details/78905042)，这种OOD情况比较普遍，仅仅是X 的分布有变化，条件概率分布不变，[Shen et al., 2021](http://arxiv.org/abs/2108.13624) 在综述中这么定义。The marginal distribution of $X$​​​ shifts from training phase to test phase while the label generation mechanism keeps unchanged.
+    **adaptation:** 目标领域的unlabeled数据 $X$ 已知
 
-   **adaptation:** 目标领域的unlabeled数据 $X$ 已知
-
-   **generalization:** 对于目标领域一无所知
+    **generalization:** 对于目标领域一无所知
 
 2. 条件概率改变
 
-   $$ P_{tr}(Y|X)\ne P_{te}(Y|X), P_{tr}(X) \ne P_{te}(X)$$​  ，或者​
+   $$ P_{tr}(Y|X)\ne P_{te}(Y|X), P_{tr}(X) \ne P_{te}(X)$$​ 
 
-   $$ P_{tr}(Y|X)\ne P_{te}(Y|X), P_{tr}(X) = P_{te}(X)$$​
+   或者：$$ P_{tr}(Y|X)\ne P_{te}(Y|X), P_{tr}(X) = P_{te}(X)$$​
 
    称为 concept shift problem, 综述（[Gama et.al, 2014](https://dl.acm.org/doi/pdf/10.1145/2523813)）
 
