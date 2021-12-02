@@ -10,24 +10,28 @@ $$
 
 <img src="https://gitee.com/hanmingyue/picgo/raw/master/pic/image-20211201202032545.png" alt="image-20211201202032545" style="zoom: 80%;" align=center/>
 
-i.e.
+也就是说：
 $$
 P_{tr}(Y|X)* P_{tr}(X)\ne P_{te}(Y|X)* P_{te}(X)
 $$
 
-- $$ P_{tr}(Y|X)= P_{te}(Y|X), P_{tr}(X) \ne P_{te}(X)$$​
+包括以下几种可能：
 
-  [covariate shift problem](https://blog.csdn.net/gzmfxy/article/details/78905042)，这种OOD情况比较普遍，仅仅是X 的分布有变化，条件概率分布不变，[Shen et al., 2021](http://arxiv.org/abs/2108.13624) 在综述中这么定义。The marginal distribution of $X$​​ shifts from training phase to test phase while the label generation mechanism keeps unchanged.
+1.  $$ P_{tr}(Y|X)= P_{te}(Y|X), P_{tr}(X) \ne P_{te}(X)$$​​​
 
-  **adaptation:** 目标领域的unlabeled数据 $X$ 已知
+   [covariate shift problem](https://blog.csdn.net/gzmfxy/article/details/78905042)，这种OOD情况比较普遍，仅仅是X 的分布有变化，条件概率分布不变，[Shen et al., 2021](http://arxiv.org/abs/2108.13624) 在综述中这么定义。The marginal distribution of $X$​​​ shifts from training phase to test phase while the label generation mechanism keeps unchanged.
 
-  **generalization:** 对于目标领域一无所知
+   **adaptation:** 目标领域的unlabeled数据 $X$ 已知
 
-- $$ P_{tr}(Y|X)\ne P_{te}(Y|X), P_{tr}(X) \ne P_{te}(X)$$​
+   **generalization:** 对于目标领域一无所知
 
-  $$ P_{tr}(Y|X)\ne P_{te}(Y|X), P_{tr}(X) = P_{te}(X)$$​
+2. 条件概率改变
 
-  concept shift problem, 综述（[Gama et.al, 2014](https://dl.acm.org/doi/pdf/10.1145/2523813)）
+   $$ P_{tr}(Y|X)\ne P_{te}(Y|X), P_{tr}(X) \ne P_{te}(X)$$​  ，或者​
+
+   $$ P_{tr}(Y|X)\ne P_{te}(Y|X), P_{tr}(X) = P_{te}(X)$$​
+
+   称为 concept shift problem, 综述（[Gama et.al, 2014](https://dl.acm.org/doi/pdf/10.1145/2523813)）
 
 ### A New Problem in OOD setting
 
@@ -42,7 +46,7 @@ $$
 - Agnostic data selection bias
   More general and realistic
 
- It is well recognized that causal variables are stable across different domains or data selection bias, due to the **rigorous scrutiny on confounding effects in identifying causal variables**.
+It is well recognized that causal variables are stable across different domains or data selection bias, due to the **rigorous scrutiny on confounding effects in identifying causal variables**.
 
 The stability of causal variables is mainly reflected by the fact that **the conditional distribution of outcome variable given those causal variables remains invariant across different domains**. 
 
@@ -64,7 +68,7 @@ identifying causal effect of **a** variable:
     - Approximate Residual Balancing
     - Differentiated Confounder Balancing
 
-特别地，我在这个文档里介绍了对 **加权使得变量之间独立** 的直观理解。
+特别地，我在这个文档里介绍了对 **[为什么加权使得变量之间独立](https://github.com/badbadcode/Causality-NLP-Reading-List/blob/master/notes/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8A%A0%E6%9D%83%E5%8F%AF%E4%BB%A5%E4%BD%BF%E5%BE%97%E5%8F%98%E9%87%8F%E7%8B%AC%E7%AB%8B.md)** 的直观理解。
 
 ## CRLR Method
 
@@ -78,7 +82,7 @@ identifying causal effect of **a** variable:
 
 针对每一个处置变量，平衡混杂的损失函数计算方式：
 
-​                 ![image-20211128230441084](../../../AppData/Roaming/Typora/typora-user-images/image-20211128230441084.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+![image-20211202111754289](https://gitee.com/hanmingyue/picgo/raw/master/pic/image-20211202111754289.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 
 整体的优化问题是：
 
@@ -86,7 +90,7 @@ identifying causal effect of **a** variable:
 
 转换成：
 
-<img src="https://gitee.com/hanmingyue/picgo/raw/master/pic/image-20211128231258530.png" alt="image-20211128231258530" style="zoom:80%;float:center" />
+<img src="https://gitee.com/hanmingyue/picgo/raw/master/pic/image-20211128231258530.png" alt="image-20211128231258530" style="zoom:80%;" />
 
 很难有解析解，我们使用迭代的方式求解，参考DCB（KDD2017）的算法，使用proximal gradient algorithm依次对两个参数求解。
 
@@ -162,12 +166,3 @@ the advantage of CRLR is more obvious when we have less training samples in the 
 1. 选择偏差与confounder均是CI领域中相关不等于因果的重要来源，二者有何共同的地方？为什么这篇论文前面是在讲选择偏差的问题，后面的解决方案是针对confounder balancing? 选择偏差造成混淆，造成内生性？
 
 2. 将所有变量作为confounder ，这样的问题是，会不会打开对撞路径。这篇文章不必考虑？还是说学习权重$\beta$ 的时候，对撞因子会自动学习到 0 的系数？但是针对不同的处置变量，其他变量是否为对撞因子是不一定的。也就是说不可能一个$\beta$ 就能搞定。
-
-
-
-
-
-
-
-
-
